@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THREAD & PRET</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Navbar */
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+    header h1 {
+      color: #00c3ff;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff4081;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('background.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .overlay-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 700px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1.5s ease-out forwards;
+    }
+
+    /* Animation */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .overlay-box h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #00c3ff;
+    }
+    .overlay-box p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .overlay-box a {
+      display: inline-block;
+      background: #ff4081;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .overlay-box a:hover {
+      background: #e60073;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <h1 class="brand">THREAD & PRET <span class="by">by Maryam</span></h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay-box">
+      <h2>Welcome to THREAD & PRET</h2>
+      <p>Elegant designs, premium style, just for you.</p>
+      <a href="shop.html">Explore Collection</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 THREAD & PRET. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

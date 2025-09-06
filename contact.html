@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - THREAD & PRET</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Brand Name ko pink karne ke liye */
+    .brand {
+      color: pink;
+      font-weight: bold;
+    }
+    .brand .by {
+      color: #fff; /* "by Maryam" ko white rakha hai, chahe to pink bhi kar sakte ho */
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body class="contact-page">
+
+ <!-- HEADER -->
+ <header>
+  <h1 class="brand">THREAD & PRET <span class="by">by Maryam</span></h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="btn-nav">Home</a></li>
+      <li><a href="shop.html" class="btn-nav">Shop</a></li>
+      <li><a href="about.html" class="btn-nav">About</a></li>
+      <li><a href="contact.html" class="btn-nav active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-container">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Please fill out the form below to place an order or ask a question.</p>
+    
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Your Phone Number" required>
+      <input type="text" name="product" placeholder="Product Number / Name" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 THREAD & PRET | Designed by Aizal</p>
+  </footer>
+
+</body>
+</html>

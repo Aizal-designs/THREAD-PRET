@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail - THREAD & PRET</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .product-detail {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      padding: 50px;
+    }
+    .product-image img {
+      width: 380px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    }
+    .product-info {
+      max-width: 500px;
+    }
+    .product-info h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ff4da6;
+    }
+    .product-info .price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #4da6ff;
+      margin-bottom: 15px;
+    }
+    .product-info .product-number {
+      font-size: 16px;
+      color: #ffccff;
+      margin-bottom: 20px;
+    }
+    .product-info .description {
+      font-size: 16px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #e60073;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1>THREAD & PRET <span style="color:pink;">by Maryam</span></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="btn-nav">Home</a></li>
+        <li><a href="shop.html" class="btn-nav">Shop</a></li>
+        <li><a href="about.html" class="btn-nav">About</a></li>
+        <li><a href="contact.html" class="btn-nav">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="product-detail" id="product-detail">
+    <div class="product-image">
+      <img id="product-img" src="" alt="Product">
+    </div>
+    <div class="product-info">
+      <h2 id="product-name"></h2>
+      <p class="price" id="product-price"></p>
+      <p class="product-number" id="product-number"></p>
+      <p class="description" id="product-desc"></p>
+      <a id="contact-link" href="contact.html" class="btn">Contact to Order</a>
+    </div>
+  </section>
+
+  <script>
+    // Product database
+    const products = {
+      1: {name: "Headphone", price: "$49.99", desc: "High-quality sound headphones.", img: "product1.jpg", number:"0001"},
+      2: {name: "Art House", price: "$79.99", desc: "Beautiful artistic piece.", img: "product2.jpg", number:"0002"},
+      3: {name: "Coffee", price: "$15.99", desc: "Fresh and organic coffee beans.", img: "product3.jpg", number:"0003"},
+      4: {name: "Mirror", price: "$39.99", desc: "Decorative stylish mirror.", img: "product4.jpg", number:"0004"},
+      5: {name: "Painting", price: "$99.99", desc: "Elegant wall painting.", img: "product5.jpg", number:"0005"},
+      6: {name: "Makeup Set", price: "$59.99", desc: "Premium beauty makeup set.", img: "product6.jpg", number:"0006"},
+      7: {name: "Nike Shoes", price: "$89.99", desc: "Stylish and comfortable sneakers.", img: "product7.jpg", number:"0007"},
+      8: {name: "Handbag", price: "$120.00", desc: "Elegant leather handbag.", img: "product8.jpg", number:"0008"},
+      9: {name: "Furniture", price: "$199.99", desc: "Modern home furniture.", img: "product9.jpg", number:"0009"},
+      10: {name: "Hair Colour", price: "$12.99", desc: "Professional hair color tube.", img: "product10.jpg", number:"0010"},
+      11: {name: "Face Serum", price: "$25.99", desc: "Natural glowing skin serum.", img: "product11.jpg", number:"0011"},
+      12: {name: "Barbie Doll", price: "$45.99", desc: "Beautiful collectible Barbie doll.", img: "product12.jpg", number:"0012"},
+    };
+
+    // get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    if (products[id]) {
+      const p = products[id];
+      document.getElementById("product-name").textContent = p.name;
+      document.getElementById("product-price").textContent = p.price;
+      document.getElementById("product-desc").textContent = p.desc;
+      document.getElementById("product-img").src = p.img;
+      document.getElementById("product-number").textContent = "Product Number: " + p.number;
+
+      // send product number to contact form
+      document.getElementById("contact-link").href = "contact.html?product=" + p.number;
+    } else {
+      document.querySelector("#product-detail").innerHTML = "<h2>Product not found!</h2>";
+    }
+  </script>
+</body>
+</html>
